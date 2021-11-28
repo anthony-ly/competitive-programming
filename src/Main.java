@@ -1,31 +1,33 @@
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        HashMap<Integer, Integer> outcomes = new HashMap<Integer, Integer>(); // HashMap storing outcomes
-        int d1 = scanner.nextInt(); // Dice 1
-        int d2 = scanner.nextInt(); // Dice 2
+        int hands = scanner.nextInt();
+        String suit = scanner.next();
+        int output = 0;
 
-        for (int i = 1; i <= d1; i++) { // Dice 1 Loop
-            for (int j = 1; j <= d2; j++) { // Dice 2 Loop
-                int value = 1;
-                if (outcomes.containsKey(i+j)) { // Check if the outcome already exists in HashMap
-                    value = outcomes.get(i+j) + 1; // Increment by 1
+        for (int i = 0; i < 4*hands; i++) {
+            String card = scanner.next();
+            
+            if (card.substring(1).equals(suit)) {
+                if (card.substring(0,1).equals("J")) {
+                    output += 20;
+                    continue;  
+                } 
+                if (card.substring(0,1).equals("9")) {
+                    output += 14;
+                    continue;
                 }
-                outcomes.put(i+j, value); // Place outcome in the HashMap
             }
+
+            if (card.substring(0,1).equals("A")) output += 11;
+            if (card.substring(0,1).equals("K")) output += 4;
+            if (card.substring(0,1).equals("Q")) output += 3;
+            if (card.substring(0,1).equals("J")) output += 2;
+            if (card.substring(0,1).equals("T")) output += 10;
         }
-        int max = Collections.max(outcomes.values()); // Find max value in outcomes
-        
-        outcomes.entrySet().forEach(entry -> { // Lambda for printing out max outcome values
-            if (entry.getValue() == max) {
-                System.out.println(entry.getKey());
-            }
-        });
-        
+        System.out.println(output);
         scanner.close();
     }
 }
