@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        int inputNums = scanner.nextInt();
-        int output = 0;
-        for (int i = 0; i < inputNums; i++) {
-            output += scanner.nextInt();
+        String date = scanner.nextLine();
+        if (date.equals("OCT 31") || date.equals("DEC 25")) {
+            System.out.println("yup");
+        } else {
+            System.out.println("nope");
         }
-        System.out.println(output);
         scanner.close();
     }
 }
