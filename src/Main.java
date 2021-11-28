@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
-        if (date.equals("OCT 31") || date.equals("DEC 25")) {
-            System.out.println("yup");
+        String input = scanner.next();
+        if (input.substring(0,3).equals("555")) {
+            System.out.println("1");
         } else {
-            System.out.println("nope");
+            System.out.println("0");
         }
         scanner.close();
     }
