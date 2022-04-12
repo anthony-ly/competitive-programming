@@ -11,6 +11,7 @@ public class Betting {
         System.out.println((float) 100 / switchPointsA);
         System.out.println((float) 100 / switchPointsB);
 
+        scanner.close();
     }
 
 }
