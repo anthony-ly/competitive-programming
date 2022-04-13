@@ -7,8 +7,6 @@ public class EyeOfSauron {
         Scanner scanner = new Scanner(System.in);
         String sauron = scanner.next();
 
-        // System.out.println(sauron.indexOf("()"));
-        // System.out.println(sauron.length());
         if (sauron.length() % 2 == 0 && sauron.indexOf("()") + 1 == sauron.length() / 2) {
             System.out.println("correct");
         } else {
