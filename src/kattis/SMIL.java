@@ -8,7 +8,7 @@ public class SMIL {
         String input = scanner.nextLine();
         int index = -1;
 
-        // if char is :, reset the index
+        // if char is : or ;, reset the index
         // if char is -, continue
         // if char is ), print the index, then reset
 
